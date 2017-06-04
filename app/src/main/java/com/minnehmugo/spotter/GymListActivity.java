@@ -8,6 +8,6 @@ public class GymListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gym_list);
+        setContentView(R.layout.gym_list_item);
     }
 }
