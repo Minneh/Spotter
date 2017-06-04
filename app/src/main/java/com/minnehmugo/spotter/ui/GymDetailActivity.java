@@ -1,10 +1,11 @@
 package com.minnehmugo.spotter.ui;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.minnehmugo.spotter.R;
+import com.minnehmugo.spotter.adapters.GymPagerAdapter;
 import com.minnehmugo.spotter.models.Gym;
 
 import org.parceler.Parcels;
@@ -15,8 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class GymDetailActivity extends AppCompatActivity {
-    @Bind(R.id.viewPager)
-    ViewPager mViewPager;
+    @Bind(R.id.viewPager) ViewPager mViewPager;
     private GymPagerAdapter adapterViewPager;
     ArrayList<Gym> mGyms = new ArrayList<>();
 
