@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.minnehmugo.spotter.MainActivity">
+    tools:context="com.minnehmugo.spotter.MainActivity"
+    android:background="#000000">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Spotter"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:id="@+id/appNameTextView"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationEditText"
+        android:background="@color/colorTextIcons"
+        android:layout_above="@+id/findGymsButton"
+        android:padding="5dp"
+        android:hint="Enter Zip Code"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find Gyms"
+        android:id="@+id/findGymsButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find a gym near you!"
+        android:textSize="25sp"
+        android:layout_marginBottom="39dp"
+        android:layout_above="@+id/findGymsButton"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
