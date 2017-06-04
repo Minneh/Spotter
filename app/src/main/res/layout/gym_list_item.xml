@@ -8,6 +8,7 @@
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:id="@+id/gymImageView"
+        android:src="@drawable/waffles"
         android:scaleType="centerCrop"/>
 
     <LinearLayout
@@ -29,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="One Gym Type"
+            android:text="One Fitness Type"
             android:id="@+id/categoryTextView"
             android:layout_below="@+id/gymNameTextView"
             android:layout_alignParentLeft="true"

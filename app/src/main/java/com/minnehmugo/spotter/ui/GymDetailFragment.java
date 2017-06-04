@@ -22,10 +22,8 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class GymDetailFragment extends Fragment {
-    @Bind(R.id.gymImageView)
-    ImageView mImageLabel;
-    @Bind(R.id.gymNameTextView)
-    TextView mNameLabel;
+    @Bind(R.id.gymImageView) ImageView mImageLabel;
+    @Bind(R.id.gymNameTextView) TextView mNameLabel;
     @Bind(R.id.categoryTextView) TextView mCategoriesLabel;
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
@@ -64,5 +62,4 @@ public class GymDetailFragment extends Fragment {
 
         return view;
     }
-
 }
