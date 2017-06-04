@@ -1,4 +1,7 @@
-package com.minnehmugo.spotter;
+package com.minnehmugo.spotter.services;
+
+import com.minnehmugo.spotter.Constants;
+import com.minnehmugo.spotter.models.Gym;
 
 import org.json.JSONArray;
 import org.json.JSONException;

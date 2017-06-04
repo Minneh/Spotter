@@ -1,4 +1,4 @@
-package com.minnehmugo.spotter;
+package com.minnehmugo.spotter.models;
 
 import org.parceler.Parcel;
 
