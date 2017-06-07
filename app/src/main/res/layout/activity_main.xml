@@ -7,9 +7,10 @@
     android:background="#000000">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/imageView"
+        android:src="@drawable/woman_pullup"
         android:scaleType="centerCrop"/>
 
     <TextView
@@ -52,8 +53,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/findGymTextView"
         android:text="Find a gym near you!"
         android:textSize="25sp"
+        android:textColor="@color/colorTextIcons"
         android:layout_marginBottom="39dp"
         android:layout_above="@+id/findGymsButton"
         android:layout_centerHorizontal="true" />

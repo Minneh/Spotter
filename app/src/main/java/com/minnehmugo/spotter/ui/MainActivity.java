@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.findGymsButton) Button mFindGymsButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
     @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    @Bind(R.id.findGymTextView) TextView mFindGymTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Typeface kaushanScript = Typeface.createFromAsset(getAssets(), "fonts/KaushanScript-Regular.otf");
         mAppNameTextView.setTypeface(kaushanScript);
+        mFindGymTextView.setTypeface(kaushanScript);
 
         mFindGymsButton.setOnClickListener(this);
     }
