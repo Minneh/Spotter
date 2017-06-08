@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.minnehmugo.spotter.R;
@@ -17,7 +16,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Bind(R.id.findGymsButton) Button mFindGymsButton;
-    @Bind(R.id.locationEditText) EditText mLocationEditText;
     @Bind(R.id.appNameTextView) TextView mAppNameTextView;
     @Bind(R.id.findGymTextView) TextView mFindGymTextView;
     @Bind(R.id.savedGymsButton) Button mSavedGymsButton;
