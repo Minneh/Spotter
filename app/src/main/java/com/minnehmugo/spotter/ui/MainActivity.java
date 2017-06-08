@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
 import com.minnehmugo.spotter.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private DatabaseReference mSearchedLocationReference;
 
     @Bind(R.id.findGymsButton) Button mFindGymsButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
