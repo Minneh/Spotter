@@ -10,7 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.minnehmugo.spotter.Constants;
 import com.minnehmugo.spotter.R;
 import com.minnehmugo.spotter.models.Gym;
 import com.squareup.picasso.Picasso;
@@ -55,19 +59,23 @@ public class GymDetailFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gym_detail, container, false);
         ButterKnife.bind(this, view);
+
         Picasso.with(view.getContext())
                 .load(mGym.getImageUrl())
                 .resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop()
                 .into(mImageLabel);
+
         mNameLabel.setText(mGym.getName());
         mCategoriesLabel.setText(android.text.TextUtils.join(", ", mGym.getCategories()));
         mRatingLabel.setText(Double.toString(mGym.getRating()) + "/5");
         mPhoneLabel.setText(mGym.getPhone());
         mAddressLabel.setText(android.text.TextUtils.join(", ", mGym.getAddress()));
+
         mWebsiteLabel.setOnClickListener(this);
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
+        mSaveGymButton.setOnClickListener(this);
 
         return view;
     }
@@ -89,6 +97,13 @@ public class GymDetailFragment extends Fragment implements View.OnClickListener{
                             + "," + mGym.getLongitude()
                             + "?q=(" + mGym.getName() + ")"));
             startActivity(mapIntent);
+        }
+        if (v == mSaveGymButton) {
+            DatabaseReference restaurantRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_GYMS);
+            restaurantRef.push().setValue(mGym);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
 }
