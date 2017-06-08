@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.locationEditText) EditText mLocationEditText;
     @Bind(R.id.appNameTextView) TextView mAppNameTextView;
     @Bind(R.id.findGymTextView) TextView mFindGymTextView;
+    @Bind(R.id.savedGymsButton) Button mSavedGymsButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFindGymTextView.setTypeface(kaushanScript);
 
         mFindGymsButton.setOnClickListener(this);
+        mSavedGymsButton.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Intent intent = new Intent(MainActivity.this, GymListActivity.class);
             intent.putExtra("location", location);
+            startActivity(intent);
+        }
+        if (v == mSavedGymsButton) {
+            Intent intent = new Intent(MainActivity.this, SavedGymListActivity.class);
             startActivity(intent);
         }
     }
