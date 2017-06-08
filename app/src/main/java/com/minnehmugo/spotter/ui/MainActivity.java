@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.minnehmugo.spotter.Constants;
 import com.minnehmugo.spotter.R;
 
 import butterknife.Bind;
@@ -26,6 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mSearchedLocationReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_CHILD_SEARCHED_LOCATION);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -41,10 +48,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == mFindGymsButton) {
             String location = mLocationEditText.getText().toString();
+            saveLocationToFirebase(location);
+
             Intent intent = new Intent(MainActivity.this, GymListActivity.class);
             intent.putExtra("location", location);
             startActivity(intent);
         }
+    }
+
+    public void saveLocationToFirebase(String location) {
+        mSearchedLocationReference.setValue(location);
     }
 }
 
