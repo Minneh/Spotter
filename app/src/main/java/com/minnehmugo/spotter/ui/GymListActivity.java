@@ -1,11 +1,13 @@
 package com.minnehmugo.spotter.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.minnehmugo.spotter.Constants;
 import com.minnehmugo.spotter.R;
 import com.minnehmugo.spotter.adapters.GymListAdapter;
 import com.minnehmugo.spotter.models.Gym;
@@ -22,6 +24,9 @@ import okhttp3.Response;
 
 public class GymListActivity extends AppCompatActivity {
     public static final String TAG = GymListActivity.class.getSimpleName();
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private String mRecentAddress;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private GymListAdapter mAdapter;
@@ -68,5 +73,9 @@ public class GymListActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private void addToSharedPreferences(String location) {
+        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
     }
 }
