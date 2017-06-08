@@ -35,8 +35,8 @@ public class GymListActivity extends AppCompatActivity {
     private String mRecentAddress;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    private GymListAdapter mAdapter;
 
+    private GymListAdapter mAdapter;
     public ArrayList<Gym> mGyms = new ArrayList<>();
 
     @Override
@@ -49,6 +49,13 @@ public class GymListActivity extends AppCompatActivity {
         String location = intent.getStringExtra("location");
 
         getGyms(location);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+
+        if (mRecentAddress != null) {
+            getGyms(mRecentAddress);
+        }
     }
 
     @Override
