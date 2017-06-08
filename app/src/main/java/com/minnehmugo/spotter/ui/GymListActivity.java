@@ -23,8 +23,7 @@ import okhttp3.Response;
 public class GymListActivity extends AppCompatActivity {
     public static final String TAG = GymListActivity.class.getSimpleName();
 
-    @Bind(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private GymListAdapter mAdapter;
 
     public ArrayList<Gym> mGyms = new ArrayList<>();
