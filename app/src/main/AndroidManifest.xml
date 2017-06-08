@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".ui.GymListActivity" />
         <activity android:name=".ui.GymDetailActivity" />
-        <activity android:name=".ui.SavedGymListActivity"></activity>
+        <activity android:name=".ui.SavedGymListActivity" />
+        <activity android:name=".ui.CreateAccountActivity"></activity>
     </application>
 
 </manifest>
