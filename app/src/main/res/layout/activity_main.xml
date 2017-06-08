@@ -26,20 +26,6 @@
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/locationEditText"
-        android:background="@color/colorTextIcons"
-        android:layout_above="@+id/findGymsButton"
-        android:padding="5dp"
-        android:hint="Enter Zip Code"
-        android:layout_centerHorizontal="true"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp"
-        android:layout_marginBottom="10dp"/>
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
