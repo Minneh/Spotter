@@ -71,6 +71,7 @@ android:background="@color/colorPrimary">
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:id="@+id/loginTextView"
     android:text="Login"
     android:textColor="@color/colorPrimaryLight"
     android:textSize="30dp"
