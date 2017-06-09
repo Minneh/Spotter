@@ -111,6 +111,7 @@ public class GymDetailFragment extends Fragment implements View.OnClickListener{
             String pushId = pushRef.getKey();
             mGym.setPushId(pushId);
             pushRef.setValue(mGym);
+
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }

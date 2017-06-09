@@ -6,6 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.minnehmugo.spotter.Constants;
@@ -30,7 +32,12 @@ public class SavedGymListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gyms);
         ButterKnife.bind(this);
 
-        mGymReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_GYMS);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        mGymReference = FirebaseDatabase.getInstance()
+                .getReference(Constants.FIREBASE_CHILD_GYMS)
+                .child(uid);
         setUpFirebaseAdapter();
     }
 
