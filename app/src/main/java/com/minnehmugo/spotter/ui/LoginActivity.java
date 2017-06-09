@@ -11,12 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseAuth;
 import com.minnehmugo.spotter.R;
 
 import butterknife.Bind;
@@ -25,6 +25,7 @@ import butterknife.ButterKnife;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = LoginActivity.class.getSimpleName();
     private FirebaseAuth mAuth;
+
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthProgressDialog;
 
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
+
         createAuthProgressDialog();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -72,6 +74,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+
+        mRegisterTextView.setOnClickListener(this);
+        mPasswordLoginButton.setOnClickListener(this);
     }
 
     @Override
@@ -119,7 +124,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }
                     }
                 });
-
 
     }
 }
