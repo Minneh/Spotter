@@ -19,6 +19,7 @@ public class Gym {
     double latitude;
     double longitude;
     List<String> categories = new ArrayList<>();
+    private String pushId;
 
     // empty constructor needed by the Parceler library:
     public Gym() {}
@@ -77,5 +78,13 @@ public class Gym {
         String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 6).concat("o.jpg");
         return largeImageUrl;
     }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
 }
 
