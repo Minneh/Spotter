@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.minnehmugo.spotter.Constants;
@@ -99,10 +101,16 @@ public class GymDetailFragment extends Fragment implements View.OnClickListener{
             startActivity(mapIntent);
         }
         if (v == mSaveGymButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
             DatabaseReference restaurantRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_GYMS);
-            restaurantRef.push().setValue(mGym);
+                    .getReference(Constants.FIREBASE_CHILD_GYMS)
+                    .child(uid);
+            DatabaseReference pushRef = restaurantRef.push();
+            String pushId = pushRef.getKey();
+            mGym.setPushId(pushId);
+            pushRef.setValue(mGym);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
