@@ -80,6 +80,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+
     @Override
     public void onClick(View view){
         if (view == mLoginTextView){
