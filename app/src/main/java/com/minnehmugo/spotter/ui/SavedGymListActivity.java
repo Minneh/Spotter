@@ -43,7 +43,7 @@ public class SavedGymListActivity extends AppCompatActivity {
 
     private void setUpFirebaseAdapter() {
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Gym, FirebaseGymViewHolder>
-                (Gym.class, R.layout.gym_list_item, FirebaseGymViewHolder.class,
+                (Gym.class, R.layout.gym_list_item_drag, FirebaseGymViewHolder.class,
                         mGymReference) {
 
             @Override
