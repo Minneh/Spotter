@@ -26,4 +26,18 @@ public class FirebaseGymListAdapter extends FirebaseRecyclerAdapter<Gym, Firebas
         mOnStartDragListener = onStartDragListener;
         mContext = context;
     }
+    @Override
+    protected void populateViewHolder(FirebaseGymViewHolder viewHolder, Gym model, int position) {
+        viewHolder.bindGym(model);
+    }
+
+    @Override
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        return false;
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+
+    }
 }
