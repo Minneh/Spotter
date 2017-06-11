@@ -67,6 +67,7 @@ public class FirebaseGymViewHolder extends RecyclerView.ViewHolder implements Vi
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     gyms.add(snapshot.getValue(Gym.class));
+
                 }
 
                 int itemPosition = getLayoutPosition();
