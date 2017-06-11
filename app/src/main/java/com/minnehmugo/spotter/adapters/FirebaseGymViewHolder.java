@@ -32,6 +32,7 @@ public class FirebaseGymViewHolder extends RecyclerView.ViewHolder implements Vi
 
     View mView;
     Context mContext;
+    public ImageView mGymImageView;
 
     public FirebaseGymViewHolder(View itemView) {
         super(itemView);
@@ -41,7 +42,7 @@ public class FirebaseGymViewHolder extends RecyclerView.ViewHolder implements Vi
     }
 
     public void bindGym(Gym gym) {
-        ImageView gymImageView = (ImageView) mView.findViewById(R.id.gymImageView);
+        mGymImageView = (ImageView) mView.findViewById(R.id.gymImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.gymNameTextView);
         TextView categoryTextView = (TextView) mView.findViewById(R.id.categoryTextView);
         TextView ratingTextView = (TextView) mView.findViewById(R.id.ratingTextView);
@@ -50,7 +51,7 @@ public class FirebaseGymViewHolder extends RecyclerView.ViewHolder implements Vi
                 .load(gym.getImageUrl())
                 .resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop()
-                .into(gymImageView);
+                .into(mGymImageView);
 
         nameTextView.setText(gym.getName());
         categoryTextView.setText(gym.getCategories().get(0));
